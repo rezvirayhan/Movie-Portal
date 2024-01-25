@@ -34,7 +34,9 @@ const CartDetails = ({ onClose }) => {
                                     className="bg-[#D42967] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
                                 >
                                     <img className="w-5 h-5" src="./assets/delete.svg" alt="" />
-                                    <span className="max-md:hidden">Remove</span>
+                                    <span className="max-md:hidden">
+                                        Remove
+                                    </span>
                                 </button>
                             </div>
                         </div>
@@ -46,7 +48,9 @@ const CartDetails = ({ onClose }) => {
                                     alt=""
                                 />
                                 <div>
-                                    <h3 className="text-base md:text-xl font-bold">Iron Man</h3>
+                                    <h3 className="text-base md:text-xl font-bold">
+                                        Iron Man
+                                    </h3>
                                     <p className="max-md:text-xs text-[#575A6E]">
                                         Action/Adventure/Sci-fi
                                     </p>
@@ -69,7 +73,7 @@ const CartDetails = ({ onClose }) => {
                             href="#"
                         >
                             <img src="./assets/icons/checkout.svg" width="24" height="24" alt="" />
-                            <span>Checkout</span>
+                            <span>CheckOut</span>
                         </a>
                         <a
                             className="border border-[#74766F] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#6F6F6F] dark:text-gray-200 font-semibold text-sm"
