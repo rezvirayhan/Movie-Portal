@@ -14,25 +14,25 @@ const Sidebar = () => {
                     </a>
                 </li>
                 <li>
-                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg" href="#">
+                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg hover:bg-primary" href="#">
                         <img src={New_Releases} width="24" height="24" alt="" />
                         <span>New Releases</span>
                     </a>
                 </li>
                 <li>
-                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg" href="#">
+                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg hover:bg-primary" href="#">
                         <img src={Comming_Soon} width="24" height="24" alt="" />
                         <span>Coming Soon</span>
                     </a>
                 </li>
                 <li>
-                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg" href="#">
+                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg hover:bg-primary" href="#">
                         <img src={Favourites} width="24" height="24" alt="" />
                         <span>Favourites</span>
                     </a>
                 </li>
                 <li>
-                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg" href="#">
+                    <a className="flex items-center space-x-2 px-5 py-3.5 rounded-lg hover:bg-primary" href="#">
                         <img src={Watch_Leter} width="24" height="24" alt="" />
                         <span>Watch Later</span>
                     </a>
