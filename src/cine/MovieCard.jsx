@@ -1,6 +1,5 @@
 import { getImageUrl } from "../utils/cine-utility";
 import Rating from "./Rating";
-
 const MovieCard = ({ movie }) => {
     return (
         <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl">
@@ -22,5 +21,4 @@ const MovieCard = ({ movie }) => {
         </figure>
     );
 };
-
 export default MovieCard;
