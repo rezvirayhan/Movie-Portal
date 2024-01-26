@@ -18,3 +18,6 @@ function App() {
 }
 
 export default App
+
+// </MovieContext.Provider>
+
