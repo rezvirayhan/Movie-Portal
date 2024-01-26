@@ -5,7 +5,13 @@ import { MovieContext } from "../context/Index";
 import { getImageUrl } from "../utils/cine-utility";
 const CartDetails = ({ onClose }) => {
     const { cartDta, setCartData } = useContext(MovieContext)
-    console.log(cartDta);
+    function handleDeleted(event, itemId) {
+        event.preventDefault()
+        const filterItmes = cartDta.filter((item) => {
+            return item.id !== itemId;
+        })
+        setCartData([...filterItmes])
+    }
     return (
         <div
             className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm"
@@ -22,40 +28,41 @@ const CartDetails = ({ onClose }) => {
                     >
 
                         {
-                            cartDta.map(item =>
-                                <div key={item.id} className="grid grid-cols-[1fr_auto] gap-4">
-                                    <div className="flex items-center gap-4">
-                                        <img
-                                            className="rounded overflow-hidden w-16 h-w-16"
-                                            src={getImageUrl(item.cover)}
-                                            alt=""
-                                        />
-                                        <div>
-                                            <h3 className="text-base md:text-xl font-bold">
-                                                {
-                                                    item.title
-                                                }
-                                            </h3>
-                                            <p className="max-md:text-xs text-[#575A6E]">
-                                                {item.genre}
-                                            </p>
-                                            <span className="max-md:text-xs">$
-                                                {item.price}</span>
+                            cartDta.length === 0 ? (<p>The Cart Is Empty</p>) :
+                                (cartDta.map(item =>
+                                    <div key={item.id} className="grid grid-cols-[1fr_auto] gap-4">
+                                        <div className="flex items-center gap-4">
+                                            <img
+                                                className="rounded overflow-hidden w-16 h-w-16"
+                                                src={getImageUrl(item.cover)}
+                                                alt=""
+                                            />
+                                            <div>
+                                                <h3 className="text-base md:text-xl font-bold">
+                                                    {
+                                                        item.title
+                                                    }
+                                                </h3>
+                                                <p className="max-md:text-xs text-[#575A6E]">
+                                                    {item.genre}
+                                                </p>
+                                                <span className="max-md:text-xs">$
+                                                    {item.price}</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-between gap-4 items-center">
+                                            <button
+                                                onClick={() => handleDeleted(event, item.id)}
+                                                className="bg-[#D42967] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
+                                            >
+                                                <img className="w-5 h-5" src={deletedImages} alt="" />
+                                                <span className="max-md:hidden">
+                                                    Remove
+                                                </span>
+                                            </button>
                                         </div>
                                     </div>
-                                    <div className="flex justify-between gap-4 items-center">
-                                        <button
-                                            className="bg-[#D42967] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
-                                        >
-                                            <img className="w-5 h-5" src={deletedImages} alt="" />
-                                            <span className="max-md:hidden">
-                                                Remove
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            )
-                        }
+                                ))}
                     </div>
                     <div className="flex items-center justify-end gap-2">
                         <a
